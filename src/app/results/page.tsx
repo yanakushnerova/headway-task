@@ -3,22 +3,24 @@
 import { useRouter } from 'next/navigation';
 import useQuizSession from '@/hooks/useQuizSession';
 
-export default function HomePage() {
+export default function ResultsPage() {
   const router = useRouter();
-  const { clearSession, saveProgress } = useQuizSession();
+  const { score, clearSession, saveProgress } = useQuizSession();
 
   return (
     <main>
-      <h1>Who wants to be a millionaire?</h1>
+      <h1>Total score:</h1>
+      <p>${score.toLocaleString()} earned</p>
+
       <button
         type="button"
         onClick={() => {
           clearSession();
           saveProgress({ currentId: 1, score: 0 });
-          router.push('/quiz/1');
+          router.push('/');
         }}
       >
-        Start
+        Try again
       </button>
     </main>
   );

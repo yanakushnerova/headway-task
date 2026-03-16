@@ -1,0 +1,411 @@
+{
+  "quiz": {
+    "title": "Who wants to be a millionaire?",
+    "prizeLadder": [
+      {
+        "questionId": 1,
+        "prize": 500
+      },
+      {
+        "questionId": 2,
+        "prize": 1000
+      },
+      {
+        "questionId": 3,
+        "prize": 2000
+      },
+      {
+        "questionId": 4,
+        "prize": 4000
+      },
+      {
+        "questionId": 5,
+        "prize": 8000
+      },
+      {
+        "questionId": 6,
+        "prize": 16000
+      },
+      {
+        "questionId": 7,
+        "prize": 32000
+      },
+      {
+        "questionId": 8,
+        "prize": 64000
+      },
+      {
+        "questionId": 9,
+        "prize": 125000
+      },
+      {
+        "questionId": 10,
+        "prize": 250000
+      },
+      {
+        "questionId": 11,
+        "prize": 500000
+      },
+      {
+        "questionId": 12,
+        "prize": 1000000
+      }
+    ],
+    "questions": [
+      {
+        "id": 1,
+        "type": "single",
+        "text": "What is the capital of France?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Lyon",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Paris",
+            "isAnswer": true
+          },
+          {
+            "id": "C",
+            "text": "Marseille",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Bordeaux",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "single",
+        "text": "On which continent is Egypt located?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Asia",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "South America",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Africa",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Europe",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "type": "multiple",
+        "text": "Which of the following are Italian cities?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Florence",
+            "isAnswer": true
+          },
+          {
+            "id": "B",
+            "text": "Seville",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Naples",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Bologna",
+            "isAnswer": true
+          },
+          {
+            "id": "E",
+            "text": "Lyon",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "type": "single",
+        "text": "Machu Picchu is located in which country?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Bolivia",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Chile",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Colombia",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Peru",
+            "isAnswer": true
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "type": "single",
+        "text": "What is the capital of Australia?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Sydney",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Melbourne",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Canberra",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Brisbane",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "type": "multiple",
+        "text": "Which of the following cities serve as national capitals?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Astana",
+            "isAnswer": true
+          },
+          {
+            "id": "B",
+            "text": "Barcelona",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Nairobi",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Melbourne",
+            "isAnswer": false
+          },
+          {
+            "id": "E",
+            "text": "Baku",
+            "isAnswer": true
+          },
+          {
+            "id": "F",
+            "text": "Osaka",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "type": "single",
+        "text": "In which country would you find the famous landmark Petra?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Israel",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Jordan",
+            "isAnswer": true
+          },
+          {
+            "id": "C",
+            "text": "Saudi Arabia",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Egypt",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "type": "single",
+        "text": "Which ocean is the largest by surface area?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Atlantic Ocean",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Indian Ocean",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Arctic Ocean",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Pacific Ocean",
+            "isAnswer": true
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "type": "single",
+        "text": "What is the capital of Canada?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Toronto",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Vancouver",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Montréal",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Ottawa",
+            "isAnswer": true
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "type": "multiple",
+        "text": "Which of the following are UNESCO World Heritage Sites?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Angkor Wat",
+            "isAnswer": true
+          },
+          {
+            "id": "B",
+            "text": "Burj Khalifa",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "The Great Wall of China",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Times Square",
+            "isAnswer": false
+          },
+          {
+            "id": "E",
+            "text": "Alhambra",
+            "isAnswer": true
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "type": "single",
+        "text": "Which country has the most natural lakes in the world?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Norway",
+            "isAnswer": false
+          },
+          {
+            "id": "B",
+            "text": "Canada",
+            "isAnswer": true
+          },
+          {
+            "id": "C",
+            "text": "Finland",
+            "isAnswer": false
+          },
+          {
+            "id": "D",
+            "text": "Brazil",
+            "isAnswer": false
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "type": "multiple",
+        "text": "Which of these African countries are landlocked?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Niger",
+            "isAnswer": true
+          },
+          {
+            "id": "B",
+            "text": "Ghana",
+            "isAnswer": false
+          },
+          {
+            "id": "C",
+            "text": "Chad",
+            "isAnswer": true
+          },
+          {
+            "id": "D",
+            "text": "Tanzania",
+            "isAnswer": false
+          },
+          {
+            "id": "E",
+            "text": "Burkina Faso",
+            "isAnswer": true
+          },
+          {
+            "id": "F",
+            "text": "Senegal",
+            "isAnswer": false
+          }
+        ]
+      }
+    ]
+  }
+}
