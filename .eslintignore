@@ -1,0 +1,5 @@
+.eslintrc.cjs
+next-env.d.ts
+.next
+node_modules
+
