@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import IconButton from '@/components/IconButton/IconButton';
 import useQuizSession from '@/hooks/useQuizSession';
 import { OPTION_STATUS, type PrizeStep, type QuizQuestion, type OptionStatus } from '@/utils/quiz';
 import { isSetsEqual } from '@/utils/quiz';
@@ -37,11 +37,18 @@ function QuestionBlock({ question, prize, lastQuestionId, prizeSteps }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [evaluation, setEvaluation] = useState<Evaluation | null>(null);
   const [isPrizeDialogOpen, setIsPrizeDialogOpen] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    if (!isSessionLoaded) return;
-    if (currentId === question.id) return;
-    if (evaluation) return;
+    if (isPrizeDialogOpen) {
+      dialogRef.current?.showModal();
+    } else {
+      dialogRef.current?.close();
+    }
+  }, [isPrizeDialogOpen]);
+
+  useEffect(() => {
+    if (!isSessionLoaded || evaluation || currentId === question.id) return;
 
     router.replace(`/quiz/${currentId}`);
   }, [currentId, evaluation, isSessionLoaded, question.id, router]);
@@ -116,29 +123,27 @@ function QuestionBlock({ question, prize, lastQuestionId, prizeSteps }: Props) {
 
   return (
     <section className={styles.section}>
-      <button
-        type="button"
+      <IconButton
+        src="/svg/menu.svg"
+        alt="Open prize ladder"
         className={styles.menuButton}
         onClick={() => setIsPrizeDialogOpen(true)}
+      />
+
+      <dialog
+        ref={dialogRef}
+        className={styles.prizeLadderDialog}
+        onClose={() => setIsPrizeDialogOpen(false)}
       >
-        <Image src="/svg/menu.svg" alt="Open prize ladder" width={24} height={24} />
-      </button>
+        <IconButton
+          src="/svg/close.svg"
+          alt="Close prize ladder"
+          className={styles.closeButton}
+          onClick={() => setIsPrizeDialogOpen(false)}
+        />
 
-      {isPrizeDialogOpen ? (
-        <div className={styles.ladderOverlay} role="dialog">
-          <div className={styles.ladderDialog}>
-            <button
-              type="button"
-              className={styles.closeButton}
-              onClick={() => setIsPrizeDialogOpen(false)}
-            >
-              <Image src="/svg/close.svg" alt="" width={24} height={24} />
-            </button>
-
-            <PrizeLadder steps={prizeSteps} activeQuestionId={question.id} />
-          </div>
-        </div>
-      ) : null}
+        <PrizeLadder steps={prizeSteps} activeQuestionId={question.id} />
+      </dialog>
 
       <h2 className={styles.h2}>{question.text}</h2>
 

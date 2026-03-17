@@ -1,0 +1,17 @@
+.aside {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  flex: 1;
+
+  min-width: 376px;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .aside {
+    min-width: unset;
+    width: 100%;
+  }
+}

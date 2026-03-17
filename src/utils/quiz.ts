@@ -35,6 +35,14 @@ export const OPTION_STATUS = {
 
 export type OptionStatus = (typeof OPTION_STATUS)[keyof typeof OPTION_STATUS];
 
+export const PRIZE_ITEM_STATUS = {
+  Current: 'current',
+  Reached: 'reached',
+  Upcoming: 'upcoming',
+} as const;
+
+export type PrizeItemStatus = (typeof PRIZE_ITEM_STATUS)[keyof typeof PRIZE_ITEM_STATUS];
+
 export function getQuiz(): QuizData['quiz'] {
   return (quizJson as QuizData).quiz;
 }
