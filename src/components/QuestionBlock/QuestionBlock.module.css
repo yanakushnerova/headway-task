@@ -1,0 +1,93 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex: 3;
+  padding: 120px 80px;
+
+  background-color: var(--color-lightgrey);
+
+  position: relative;
+}
+
+.menuButton {
+  display: none;
+}
+
+.ladderOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.ladderDialog {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  background: var(--color-white);
+  padding: 24px 16px;
+  overflow: auto;
+}
+
+.closeButton {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.h2 {
+  max-width: 80%;
+
+  color: var(--color-black);
+
+  font-size: var(--font-l);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-semibold);
+}
+
+.optionsBlock {
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 0;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 136px 0 24px;
+  
+    background-color: var(--color-lightgrey);
+  }
+
+  .menuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .h2 {
+    max-width: 100%;
+    text-align: center;
+    padding: 0 16px;
+  
+    font-size: var(--font-s);
+  }
+
+  .optionsBlock {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

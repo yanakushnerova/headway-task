@@ -26,6 +26,15 @@ export type QuizData = {
   };
 };
 
+export const OPTION_STATUS = {
+  Inactive: 'inactive',
+  Selected: 'selected',
+  Correct: 'correct',
+  Wrong: 'wrong',
+} as const;
+
+export type OptionStatus = (typeof OPTION_STATUS)[keyof typeof OPTION_STATUS];
+
 export function getQuiz(): QuizData['quiz'] {
   return (quizJson as QuizData).quiz;
 }

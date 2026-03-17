@@ -11,6 +11,8 @@
 
   border: none;
   border-radius: var(--radius-m);
+
+  cursor: pointer;
 }
 
 .button:hover {
