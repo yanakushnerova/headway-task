@@ -1,27 +1,35 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import useQuizSession from '@/hooks/useQuizSession';
+import styles from '@/app/results/page.module.css';
+import Button from '@/components/Button/Button';
 
 export default function ResultsPage() {
   const router = useRouter();
   const { score, clearSession, saveProgress } = useQuizSession();
 
   return (
-    <main>
-      <h1>Total score:</h1>
-      <p>${score.toLocaleString()} earned</p>
+    <main className={styles.main}>
+      <div className={styles.imageBlock}>
+        <Image className={styles.image} src="/svg/hand.svg" fill priority alt="Thumb up" />
+      </div>
+      <div className={styles.sideBlock}>
+        <div className={styles.textBlock}>
+          <h1 className={styles.h1}>Total score:</h1>
+          <p className={styles.p}>${score.toLocaleString()} earned</p>
+        </div>
 
-      <button
-        type="button"
-        onClick={() => {
-          clearSession();
-          saveProgress({ currentId: 1, score: 0 });
-          router.push('/');
-        }}
-      >
-        Try again
-      </button>
+        <Button
+          text="Try again"
+          onClick={() => {
+            clearSession();
+            saveProgress({ currentId: 1, score: 0 });
+            router.push('/');
+          }}
+        />
+      </div>
     </main>
   );
 }

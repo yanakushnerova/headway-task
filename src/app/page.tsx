@@ -2,24 +2,30 @@
 
 import { useRouter } from 'next/navigation';
 import useQuizSession from '@/hooks/useQuizSession';
+import Image from 'next/image';
+import styles from '@/app/page.module.css';
+import Button from '@/components/Button/Button';
 
 export default function HomePage() {
   const router = useRouter();
   const { clearSession, saveProgress } = useQuizSession();
 
   return (
-    <main>
-      <h1>Who wants to be a millionaire?</h1>
-      <button
-        type="button"
-        onClick={() => {
-          clearSession();
-          saveProgress({ currentId: 1, score: 0 });
-          router.push('/quiz/1');
-        }}
-      >
-        Start
-      </button>
+    <main className={styles.main}>
+      <div className={styles.imageBlock}>
+        <Image className={styles.image} src="/svg/hand.svg" fill priority alt="Thumb up" />
+      </div>
+      <div className={styles.sideBlock}>
+        <h1 className={styles.h1}>Who wants to be a millionaire?</h1>
+        <Button
+          text="Start"
+          onClick={() => {
+            clearSession();
+            saveProgress({ currentId: 1, score: 0 });
+            router.push('/quiz/1');
+          }}
+        />
+      </div>
     </main>
   );
 }

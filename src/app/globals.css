@@ -1,6 +1,33 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-orange-120: #E87928;
+  --color-orange-100: #FF8B37;
+  --color-orange-80: #FFAC70;
+  --color-orange-5: #FFF3EB;
+
+  --color-green-100: #47D867;
+  --color-green-5: #E6FAEA;
+
+  --color-red-100: #EC6259;
+  --color-red-5: #FDEEED;
+
+  --color-black: #1C1C21;
+  --color-grey: #D0D0D8;
+  --color-lightgrey: #F5F5F7;
+  --color-white: #FFFFFF;
+
+  --font-xl: 56px;
+  --font-l: 32px;
+  --font-m: 20px;
+  --font-s: 18px;
+  --font-xs: 14px;
+
+  --line-height-m: 116%;
+
+  --font-semibold: 600;
+  --font-regular: 400;
+
+  --radius-m: 12px;
+  --radius-s: 8px;
 }
 
 html,
@@ -10,20 +37,12 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-inter), sans-serif;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  font-family: var(--font-inter), sans-serif;
 }

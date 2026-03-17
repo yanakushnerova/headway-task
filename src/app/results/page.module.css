@@ -7,11 +7,7 @@
   min-height: 100vh;
   width: 100%;
 
-  background: linear-gradient(
-    to bottom right,
-    var(--color-white) 50%,
-    var(--color-orange-5) 50%
-  );
+  background-color: var(--color-lightgrey);
 
   gap: 32px;
   padding: 80px;
@@ -39,7 +35,21 @@
   object-fit: 'contain';
 }
 
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .h1 {
+  font-size: var(--font-l);
+  line-height: var(--line-height-m);
+  font-weight: var(--font-semibold);
+  color: var(--color-black);
+  opacity: .5;
+}
+
+.p {
   font-size: var(--font-xl);
   line-height: var(--line-height-m);
   font-weight: var(--font-semibold);
@@ -50,7 +60,7 @@
   .main {
     flex-direction: column;
 
-    gap: 24px;
+    gap: 32px;
     padding: 16px;
   }
 
@@ -71,6 +81,10 @@
   }
   
   .h1 {
+    font-size: var(--font-s);
+  }
+
+  .p {
     font-size: var(--font-l);
   }
 }
