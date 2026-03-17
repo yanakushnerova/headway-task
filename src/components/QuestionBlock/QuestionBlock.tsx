@@ -4,8 +4,13 @@ import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import IconButton from '@/components/IconButton/IconButton';
 import useQuizSession from '@/hooks/useQuizSession';
-import { OPTION_STATUS, type PrizeStep, type QuizQuestion, type OptionStatus } from '@/utils/quiz';
-import { isSetsEqual } from '@/utils/quiz';
+import {
+  OPTION_STATUS,
+  isSetsEqual,
+  type PrizeStep,
+  type QuizQuestion,
+  type OptionStatus,
+} from '@/utils/quiz';
 import { ANSWER_FEEDBACK_DELAY_MS } from '@/utils/constants';
 import styles from '@/components/QuestionBlock/QuestionBlock.module.css';
 import Option from '@/components/Option/Option';
@@ -37,6 +42,7 @@ function QuestionBlock({ question, prize, lastQuestionId, prizeSteps }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [evaluation, setEvaluation] = useState<Evaluation | null>(null);
   const [isPrizeDialogOpen, setIsPrizeDialogOpen] = useState(false);
+
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -83,7 +89,7 @@ function QuestionBlock({ question, prize, lastQuestionId, prizeSteps }: Props) {
       const isCorrect = isSetsEqual(nextSelected, correctIds);
       setEvaluation({ selected: nextSelected, isCorrect });
 
-      window.setTimeout(() => handleQuestionCompletion(isCorrect), ANSWER_FEEDBACK_DELAY_MS);
+      setTimeout(() => handleQuestionCompletion(isCorrect), ANSWER_FEEDBACK_DELAY_MS);
     },
     [question.type, requiredSelections, correctIds, handleQuestionCompletion],
   );

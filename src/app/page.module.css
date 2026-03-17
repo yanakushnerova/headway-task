@@ -36,7 +36,7 @@
 }
 
 .image {
-  object-fit: 'contain';
+  object-fit: contain;
 }
 
 .h1 {

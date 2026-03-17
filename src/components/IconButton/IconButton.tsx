@@ -9,9 +9,9 @@ type Props = {
   size?: number;
 };
 
-function IconButton({ src, alt, onClick, className, size = 24 }: Props) {
+function IconButton({ src, alt, onClick, className = '', size = 24 }: Props) {
   return (
-    <button type="button" onClick={onClick} className={`${styles.button} ${className ?? ''}`}>
+    <button type="button" onClick={onClick} className={`${styles.button} ${className}`}>
       <Image src={src} alt={alt} width={size} height={size} />
     </button>
   );

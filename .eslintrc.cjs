@@ -40,6 +40,14 @@ module.exports = {
       },
       plugins: ['@typescript-eslint'],
       extends: ['airbnb-typescript', 'prettier'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: ['**/*.test.ts', '**/*.test.tsx', 'jest.setup.ts', 'jest.config.js'],
+          },
+        ],
+      },
     },
   ],
 };

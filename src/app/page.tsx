@@ -1,14 +1,12 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import useQuizSession from '@/hooks/useQuizSession';
 import Image from 'next/image';
 import styles from '@/app/page.module.css';
 import Button from '@/components/Button/Button';
 
 export default function HomePage() {
   const router = useRouter();
-  const { clearSession, saveProgress } = useQuizSession();
 
   return (
     <main className={styles.main}>
@@ -20,8 +18,6 @@ export default function HomePage() {
         <Button
           text="Start"
           onClick={() => {
-            clearSession();
-            saveProgress({ currentId: 1, score: 0 });
             router.push('/quiz/1');
           }}
         />

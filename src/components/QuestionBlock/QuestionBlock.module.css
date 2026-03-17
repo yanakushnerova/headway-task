@@ -35,8 +35,6 @@
 @media (max-width: 1024px) {
   .section {
     padding: 136px 0 24px;
-  
-    background-color: var(--color-lightgrey);
   }
 
   .h2 {
@@ -57,8 +55,6 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    border: 0;
-    background: transparent;
   }
 
   .prizeLadderDialog {
@@ -84,7 +80,6 @@
 
   .closeButton {
     position: absolute;
-    background: transparent;
     top: 16px;
     right: 16px;
     z-index: 3;

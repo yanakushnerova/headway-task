@@ -8,7 +8,7 @@ import Button from '@/components/Button/Button';
 
 export default function ResultsPage() {
   const router = useRouter();
-  const { score, clearSession, saveProgress } = useQuizSession();
+  const { score, resetSession } = useQuizSession();
 
   return (
     <main className={styles.main}>
@@ -24,8 +24,7 @@ export default function ResultsPage() {
         <Button
           text="Try again"
           onClick={() => {
-            clearSession();
-            saveProgress({ currentId: 1, score: 0 });
+            resetSession();
             router.push('/');
           }}
         />

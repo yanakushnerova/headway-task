@@ -24,7 +24,7 @@ function readSession(): QuizProgress | null {
 
     if (!session) return null;
 
-    const parsed: QuizProgress = JSON.parse(session);
+    const parsed: unknown = JSON.parse(session);
     return isQuizProgress(parsed) ? parsed : null;
   } catch {
     return null;
@@ -34,8 +34,16 @@ function readSession(): QuizProgress | null {
 function writeSession(progress: QuizProgress) {
   try {
     sessionStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  } catch {
-    // TODO handle error
+  } catch (err) {
+    console.error('Failed to write quiz session to storage:', err);
+  }
+}
+
+function removeSession() {
+  try {
+    sessionStorage.removeItem(STORAGE_KEY);
+  } catch (err) {
+    console.error('Failed to remove quiz session from storage:', err);
   }
 }
 
@@ -58,9 +66,8 @@ function useQuizSession() {
     writeSession(next);
   }, []);
 
-  const clearSession = useCallback(() => {
-    sessionStorage.removeItem(STORAGE_KEY);
-    setProgress({ score: 0, currentId: 1 });
+  const resetSession = useCallback(() => {
+    removeSession();
   }, []);
 
   return {
@@ -68,7 +75,7 @@ function useQuizSession() {
     score: progress.score,
     currentId: progress.currentId,
     saveProgress,
-    clearSession,
+    resetSession,
   };
 }
 
