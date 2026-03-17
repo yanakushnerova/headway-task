@@ -29,9 +29,11 @@
   --shape-stroke: var(--color-grey);       
 }
 
-.option[data-status='inactive']:not(:has(.button:disabled)):hover { 
-  --shape-fill: var(--color-white);    
-  --shape-stroke: var(--color-orange-100); 
+@media (hover: hover) {
+  .option[data-status='inactive']:not(:has(.button:disabled)):hover {
+    --shape-fill: var(--color-white);
+    --shape-stroke: var(--color-orange-100);
+  }
 }
 
 .option[data-status='selected'] {
